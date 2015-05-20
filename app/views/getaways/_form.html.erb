@@ -1,0 +1,17 @@
+<%= form_for(@getaway) do |f| %>
+  <% if @getaway.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@getaway.errors.count, "error") %> prohibited this getaway from being saved:</h2>
+
+      <ul>
+      <% @getaway.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
