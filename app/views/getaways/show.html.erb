@@ -1,4 +1,35 @@
-<p id="notice"><%= notice %></p>
-
 <%= link_to 'Edit', edit_getaway_path(@getaway) %> |
 <%= link_to 'Back', getaways_path %>
+
+<h2><%= @getaway.name %></h2>
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'New Stop', new_getaway_stop_path(@getaway) %>
+
+<% if @getaway.stops.blank? %>
+  <div>This getaway doesn't currently have any stops.</div>
+<% else%>
+  <% @stops = @getaway.stops %>
+  <ul>
+    <% @stops.each do |stop| %>
+      <li>
+        <a href="<%= getaway_stop_path(@getaway, stop) %>">
+          <%= stop.city.name %>
+        </a>
+        <% adventures = stop.adventures %>
+        <% if adventures.present? %>
+          <ul>
+            <% adventures.each do |adventure| %>
+              <li>
+                <a href="<%= getaway_stop_adventure_path(@getaway, stop, adventure.id) %>">
+                  <%= adventure.sight.name %>
+                </a>
+                <span><%= adventure.description %></span>
+              </li>
+            <% end %>
+          </ul>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

@@ -9,14 +9,6 @@
 #   t.datetime "updated_at", null: false
 # end
 
-class Sight < ActiveRecord::Base
-  geocoded_by :address
-  after_validation :geocode
+class Landmark < Sight
 
-  validates :type, inclusion: {
-    in: %w(Museum Entertainment Landmark)
-  }
-
-  has_many :adventures
-  belongs_to :city
 end

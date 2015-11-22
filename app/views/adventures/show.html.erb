@@ -1,4 +1,12 @@
+<%= link_to 'Edit', edit_getaway_stop_adventure_path(@getaway, @stop, @adventure) %> |
+<%= link_to 'Back', getaway_stop_adventures_path(@getaway, @stop) %>
+
+<h2><%= @adventure.description %></h2>
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_adventure_path(@adventure) %> |
-<%= link_to 'Back', adventures_path %>
+<div>Sight: <%= @adventure.sight.name %></div>
+<div>City: <%= @adventure.stop.name %></div>
+
+<div>Map goes here</div>
+<div>Maybe some reviews go here</div>
+<div>Maybe a list of friends that recommended it</div>

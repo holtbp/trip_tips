@@ -12,9 +12,9 @@
   <tbody>
     <% @adventures.each do |adventure| %>
       <tr>
-        <td><%= link_to 'Show', adventure %></td>
-        <td><%= link_to 'Edit', edit_adventure_path(adventure) %></td>
-        <td><%= link_to 'Destroy', adventure, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to adventure.sight.name, getaway_stop_adventure_path(@getaway, @stop, adventure) %></td>
+        <td><%= link_to 'Edit', edit_getaway_stop_adventure_path(@getaway, @stop, adventure) %></td>
+        <td><%= link_to 'Destroy', getaway_stop_adventure_path(@getaway, @stop, adventure), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +22,4 @@
 
 <br>
 
-<%= link_to 'New Adventure', new_adventure_path %>
+<%= link_to 'New Adventure', new_getaway_stop_adventure_path(@getaway, @stop) %>

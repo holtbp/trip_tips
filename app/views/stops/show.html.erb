@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Edit', edit_getaway_stop_path(@getaway, @stop) %> |
+<%= link_to 'Back', getaway_stops_path(@getaway) %>
+
+<h2><%= @stop.name %></h2>
+
+<% if @stop.adventures.blank? %>
+  <div>You currently don't have any adventures scheduled in <%= @stop.name %> :(</div>
+  <br/>
+<% else%>
+  <% @adventures = @stop.adventures %>
+  <ul>
+    <lh>Adventures</lh>
+    <% adventures.each do |adventure| %>
+      <li>
+        <a href="<%= adventure_path(adventure.id) %>">
+          <%= adventure.description %>
+        </a>
+        <span><%= adventure.sight.name %></span>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+<%= link_to 'New Adventure', new_getaway_stop_adventure_path(@getaway, @stop) %>

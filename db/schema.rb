@@ -11,33 +11,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150520065446) do
+ActiveRecord::Schema.define(version: 20160718194329) do
 
   create_table "adventures", force: :cascade do |t|
-    t.integer  "getaway_id"
+    t.integer  "sight_id"
+    t.integer  "stop_id"
     t.text     "description"
     t.integer  "rating"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
-  add_index "adventures", ["getaway_id"], name: "index_adventures_on_getaway_id"
+  add_index "adventures", ["sight_id"], name: "index_adventures_on_sight_id"
+  add_index "adventures", ["stop_id"], name: "index_adventures_on_stop_id"
 
   create_table "cities", force: :cascade do |t|
-    t.string   "name"
-    t.string   "country"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "province_id"
+    t.string   "name",        null: false
+    t.string   "local_name"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "getaways", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "name"
     t.text     "description"
-    t.date     "arrival_date"
-    t.date     "departure_date"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "arrival"
+    t.datetime "departure"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "provinces", force: :cascade do |t|
+    t.string "name",                   null: false
+    t.string "country_code", limit: 2
   end
 
   create_table "sights", force: :cascade do |t|
@@ -48,6 +58,14 @@ ActiveRecord::Schema.define(version: 20150520065446) do
     t.string   "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "type"
+  end
+
+  create_table "stops", force: :cascade do |t|
+    t.integer  "getaway_id"
+    t.integer  "city_id"
+    t.datetime "arrival"
+    t.datetime "departure"
   end
 
   create_table "users", force: :cascade do |t|

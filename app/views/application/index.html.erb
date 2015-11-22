@@ -1,0 +1,25 @@
+<div class="welcome-intro">
+  <h3>Welcome!</h3>
+  <p>
+    Brett's Trip Tips allows you to plan, share and browse trips.
+  </p>
+  <p>
+    Plan a vacation, check things off your list as you do them, and even share your experience with ratings and reviews.
+  </p>
+</div>
+<div class="login-widget">
+  <h3>Login</h3>
+  <div class="login-container">
+    <form action="<%= login_path %>" method="POST">
+      <div>
+        <span>Email</span>
+        <input id="email_address" type="text"/>
+      </div>
+      <div>
+        <span>Password</span>
+        <input id="password" type="password" />
+      </div>
+      <input type="submit" />
+    </form>
+  </div>
+</div>
