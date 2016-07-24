@@ -20,5 +20,9 @@
   * Show country code - example of dialing a local phone number
   * Show local name for cities and countries
   * Show list of languages locals speak
+* Sight info
+  * Do lookups for operating hours for everything except landmarks. [API page](https://developers.google.com/places/web-service/details#PlaceDetailsResults)
+* Stops
+  * Autocomplete cities based on Google's API. Automatically add cities to the DB when a stop is created for a city that doesn't exist. [Relevant SO post](http://stackoverflow.com/questions/13689705/how-to-add-google-maps-autocomplete-search-box)
 * On the Trip
   * Allow checking off things completed

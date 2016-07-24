@@ -276,6 +276,96 @@ sights = [
     type: "Entertainment",
     address: "Boulevard des Jardiniers, 06200 Nice, France"
   },
+  {
+    city: "Monte Carlo",
+    name: "Larvotto Beach",
+    type: "Entertainment",
+    address: "Plage du Larvotto, 98000 Monaco-Ville, Monaco"
+  },
+  {
+    city: "Monte Carlo",
+    name: "Royal Thai",
+    type: "Food",
+    address: "18 Rue de Millo, 98000 Monaco"
+  },
+  {
+    city: "Monte Carlo",
+    name: "Oceanography Museum of Monaco",
+    type: "Museum",
+    address: "Musée Océanographique de Monaco, Avenue Saint-Martin, Monaco"
+  },
+  {
+    city: "Monte Carlo",
+    name: "Prince's Palace of Monaco",
+    type: "Landmark",
+    address: "Le Palais des Princes de Monaco, 98015, Monaco"
+  },
+  {
+    city: "Nice",
+    name: "Blue Beach",
+    type: "Food",
+    address: "Blue Beach, Prom. des Anglais, 06000 Nice, France"
+  },
+  {
+    city: "Nice",
+    name: "Jardin Albert I",
+    type: "Landmark",
+    address: "2-16 Avenue de Verdun, 06000 Nice, France"
+  },
+  {
+    city: "Amsterdam",
+    name: "Modern Contemporary (Moco) Museum",
+    type: "Museum",
+    address: "Honthorststraat 20, 1071 Amsterdam, Netherlands"
+  },
+  {
+    city: "Amsterdam",
+    name: "Omelegg - De Pijp",
+    type: "Food",
+    address: "Ferdinand Bolstraat 143, 1072 LH Amsterdam, Netherlands"
+  },
+  {
+    city: "Amsterdam",
+    name: "Zuivere Koffie",
+    type: "Food",
+    address: "Utrechtsestraat 39, 1017 VH Amsterdam, Netherlands"
+  },
+  {
+    city: "Paris",
+    name: "Parc des Princes",
+    type: "Entertainment",
+    address: "24 Rue du Commandant Guilbaud, 75016 Paris, France"
+  },
+  {
+    city: "Nîmes",
+    name: "Arena of Nîmes",
+    type: "Landmark",
+    address: "Arena of Nîmes, Boulevard des Arènes, 30000 Nîmes, France"
+  },
+  {
+    city: "Nîmes",
+    name: "Les Jardins de la Fontaine",
+    type: "Landmark",
+    address: "Les Jardins de la Fontaine, Quai de la Fontaine, 30000 Nîmes, France"
+  },
+  {
+    city: "Nîmes",
+    name: "La Tour Magne",
+    type: "Landmark",
+    address: "7 Rue de la Tour Magne, 30000 Nîmes, France"
+  },
+  {
+    city: "Nîmes",
+    name: "Mercadante",
+    type: "Food",
+    address: "4 Boulevard Gambetta, 30000 Nîmes, France"
+  },
+  {
+    city: "Nîmes",
+    name: "Temple de Diane",
+    type: "Landmark",
+    address: "Temple de Diane, 7 Quai Georges Clemenceau, 30900 Nîmes, France"
+  },
   # {
   #   city: "",
   #   name: "",

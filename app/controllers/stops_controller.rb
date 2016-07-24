@@ -1,6 +1,7 @@
 class StopsController < ApplicationController
   before_action :set_getaway
   before_action :set_stop, only: [:show, :edit, :update, :destroy]
+  before_action :set_cities, only: [:new, :edit]
 
   # GET /getaways/:getaway_id/stops
   def index
@@ -14,7 +15,6 @@ class StopsController < ApplicationController
   # GET /getaways/:getaway_id/stops/new
   def new
     @stop = Stop.new(getaway: @getaway)
-    @cities = City.name_sorted
   end
 
   # GET /getaways/:getaway_id/stops/1/edit
@@ -60,8 +60,12 @@ class StopsController < ApplicationController
       ).first
     end
 
+    def set_cities
+      @cities = City.name_sorted
+    end
+
     # Only allow a trusted parameter "white list" through.
     def stop_params
-      params.require(:stop).permit(:city_id).merge(getaway_id: @getaway.id)
+      params.require(:stop).permit(:city_id, :arrival, :departure).merge(getaway_id: @getaway.id)
     end
 end

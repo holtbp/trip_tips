@@ -9,12 +9,12 @@
 <% if @getaway.stops.blank? %>
   <div>This getaway doesn't currently have any stops.</div>
 <% else%>
-  <% @stops = @getaway.stops %>
+  <% @stops = @getaway.stops.order(:arrival) %>
   <ul>
     <% @stops.each do |stop| %>
       <li>
         <a href="<%= getaway_stop_path(@getaway, stop) %>">
-          <%= stop.city.name %>
+          <%= stop.city.name %> - <%= stop.duration_string %>
         </a>
         <% adventures = stop.adventures %>
         <% if adventures.present? %>
@@ -24,7 +24,6 @@
                 <a href="<%= getaway_stop_adventure_path(@getaway, stop, adventure.id) %>">
                   <%= adventure.sight.name %>
                 </a>
-                <span><%= adventure.description %></span>
               </li>
             <% end %>
           </ul>
