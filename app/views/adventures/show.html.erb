@@ -1,12 +1,19 @@
 <%= link_to 'Edit', edit_getaway_stop_adventure_path(@getaway, @stop, @adventure) %> |
 <%= link_to 'Back', getaway_stop_adventures_path(@getaway, @stop) %>
 
-<h2><%= @adventure.description %></h2>
+<h2><%= @adventure.sight.name %></h2>
 <p id="notice"><%= notice %></p>
 
-<div>Sight: <%= @adventure.sight.name %></div>
+<div>Description: <%= @adventure.description %></div>
 <div>City: <%= @adventure.stop.name %></div>
 
-<div>Map goes here</div>
+<% map_url = <<-STR
+  https://maps.googleapis.com/maps/api/staticmap?center=#{@adventure.sight.coords}&zoom=15&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C#{@adventure.sight.coords}&key=#{GOOGLE_MAPS_API_KEY}
+STR
+%>
+
+<img src="<%= map_url %>" class='static-map img-fluid img-rounded' alt="#{@adventure.sight.name}" />
+
+
 <div>Maybe some reviews go here</div>
 <div>Maybe a list of friends that recommended it</div>

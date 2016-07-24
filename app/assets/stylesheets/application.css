@@ -21,7 +21,6 @@ body {
 
 .header-container {
   background: #111111;
-  width: 100%;
   padding: 1em;
 }
 
@@ -37,4 +36,8 @@ body {
   display: inline-block;
   vertical-align: top;
   margin: 1em 2em;
+}
+
+img.static-map {
+  margin: 1em 0;
 }

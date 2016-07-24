@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Adventures</h1>
+<%= link_to 'Back', getaway_path(@getaway) %>
+
+<h2>Adventures in <%= @stop.name %></h2>
 
 <table>
   <thead>

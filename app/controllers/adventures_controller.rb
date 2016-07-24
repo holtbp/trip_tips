@@ -2,11 +2,12 @@ class AdventuresController < ApplicationController
   before_action :set_getaway
   before_action :set_stop
   before_action :set_adventure, only: [:show, :edit, :update, :destroy]
+  before_action :set_sights, only: [:new, :edit]
 
   # GET /getaways/:getaway_id/stops/:stop_id/adventures
   # GET /getaways/:getaway_id/stops/:stop_id/adventures.json
   def index
-    @adventures = Adventure.all
+    @adventures = Adventure.where(stop_id: @stop.id)
   end
 
   # GET /getaways/:getaway_id/stops/:stop_id/adventures/1
@@ -17,9 +18,6 @@ class AdventuresController < ApplicationController
   # GET /getaways/:getaway_id/stops/:stop_id/adventures/new
   def new
     @adventure = Adventure.new
-
-    # TODO: Use geocoder here to find only sights in close proximity to stop
-    @sights = @stop.city.nearby_sights
   end
 
   # GET /getaways/:getaway_id/stops/:stop_id/adventures/1/edit
@@ -78,6 +76,10 @@ class AdventuresController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_adventure
       @adventure = Adventure.find(params[:id])
+    end
+
+    def set_sights
+      @sights = @stop.city.nearby_sights
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
