@@ -16,6 +16,11 @@ class City < ActiveRecord::Base
     "#{name}, #{province.name}, #{province.country.name}"
   end
 
+  def country
+    return nil if province.blank?
+    province.country
+  end
+
   def self.name_sorted
     self.all.sort_by do |city|
       [city.name, city.province.name, city.province.country.name].join(',')

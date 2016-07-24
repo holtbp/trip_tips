@@ -6,6 +6,16 @@
 <h5><%= @stop.duration_string %> (<%= @stop.duration %> hours)</h5>
 <p id="notice"><%= notice %></p>
 
+<ul>
+  <lh>General Information:</lh>
+  <li>Locals call "<%= @stop.country.name %>": <%= @stop.country.local_name %>
+  <li>Currency: <%= @stop.country.currency.code %></li>
+  <li>Languages spoken: <%= @stop.country.languages.join(', ') %></li>
+  <li>Country dialing code: +<%= @stop.country.country_code %></li>
+</ul>
+
+<br/>
+
 <%= link_to 'New Adventure', new_getaway_stop_adventure_path(@getaway, @stop) %>
 
 <% if @stop.adventures.blank? %>
@@ -14,6 +24,7 @@
 <% else%>
   <% @adventures = @stop.adventures %>
   <ul>
+    <lh>Adventures</lh>
     <% @adventures.each do |adventure| %>
       <li>
         <a href="<%= getaway_stop_adventure_path(@getaway, @stop, adventure) %>">

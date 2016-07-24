@@ -15,6 +15,12 @@ class Stop < ActiveRecord::Base
     city.name
   end
 
+  # TODO: Have this return the full language names
+  def country
+    return nil if city.blank?
+    city.country
+  end
+
   # Total time (in hours) at stop; departure - arrival
   def duration
     return "?" if arrival.blank? || departure.blank?
