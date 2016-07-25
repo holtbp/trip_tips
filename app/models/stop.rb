@@ -32,9 +32,9 @@ class Stop < ActiveRecord::Base
   #   ? (if no arrival or departure are set)
   #   Jun 7-11, 2016
   #   Jun 28-Jul 3, 2016
+  #   Dec 28, 2015 - Jan 4, 2016
   #   Jun 11, 2016 - ? (if no departure is set)
   #   ? - Jun 11, 2016 (if no arrival is set)
-  # Ex: Dec 28, 2015 - Jan 4, 2016
   def duration_string
     return "?" if arrival.blank? && departure.blank?
 
@@ -43,11 +43,11 @@ class Stop < ActiveRecord::Base
     end
 
     if arrival.blank?
-      return "? - #{departure.strftime('%b %-d %Y')}"
+      return "? - #{departure.strftime('%b %-d, %Y')}"
     end
 
     if arrival.year != departure.year
-      return "#{arrival.strftime('%b %-d, %Y')} - #{departure.strftime('%b %-d %Y')}"
+      return "#{arrival.strftime('%b %-d, %Y')} - #{departure.strftime('%b %-d, %Y')}"
     end
 
     if arrival.month == departure.month

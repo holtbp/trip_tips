@@ -7,15 +7,13 @@
 chicago_stop: {
   getaway: bill_and_ted,
   city: chicago,
-  arrival: DateTime.now,
-  departure: Datetime.now + 1.day
+  arrival: '2016-07-25 11:00:00',
+  departure: '2016-07-26 11:00:00',
 }
-# column: value
-#
+
 frankfurt_stop: {
   getaway: roadtrip,
   city: frankfurt,
-  arrival: DateTime.now,
-  departure: Datetime.now + 1.day
+  arrival: '2016-07-25 11:00:00',
+  departure: '2016-07-28 11:00:00',
 }
-#  column: value

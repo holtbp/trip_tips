@@ -5,11 +5,13 @@
 # below each fixture, per the syntax in the comments below
 #
 bill_and_ted: {
-  name: "Bill and Ted's Excellent Adventure"
+  name: "Bill and Ted's Excellent Adventure",
+  arrival: '2016-07-20 11:00:00',
+  departure: '2016-07-30 11:00:00'
 }
-# column: value
-#
+
 roadtrip: {
-  name: "Cross-country Roadtrip"
+  name: "Cross-country Roadtrip",
+  arrival: '2016-08-10 08:00:00',
+  departure: '2016-08-30 18:00:00'
 }
-#  column: value

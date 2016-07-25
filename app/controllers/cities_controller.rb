@@ -26,7 +26,6 @@ class CitiesController < ApplicationController
     if @city.save
       redirect_to @city, notice: 'City was successfully created.'
     else
-      byebug
       render :new
     end
   end

@@ -6,6 +6,6 @@ class SightTest < ActiveSupport::TestCase
   end
 
   test "coords returns lat & long separated by a comma" do
-    asset_equal @sight.coords, "#{@sight.latitude},#{@sight.longitude}"  
+    assert_equal @sight.coords, "#{@sight.latitude},#{@sight.longitude}"  
   end
 end

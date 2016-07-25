@@ -26,7 +26,6 @@ class SightsController < ApplicationController
     if @sight.save
       redirect_to sight_url(@sight), notice: 'Sight was successfully created.'
     else
-      byebug
       render :new
     end
   end
