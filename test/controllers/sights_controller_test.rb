@@ -2,7 +2,7 @@ require 'test_helper'
 
 class SightsControllerTest < ActionController::TestCase
   setup do
-    @sight = sights(:one)
+    @sight = sights(:art_institute)
   end
 
   test "should get index" do
@@ -18,7 +18,10 @@ class SightsControllerTest < ActionController::TestCase
 
   test "should create sight" do
     assert_difference('Sight.count') do
-      post :create, sight: {  }
+      post :create, sight: {
+        name: 'Space Needle',
+        type: 'Landmark'
+      }
     end
 
     assert_redirected_to sight_path(assigns(:sight))
@@ -35,7 +38,10 @@ class SightsControllerTest < ActionController::TestCase
   end
 
   test "should update sight" do
-    patch :update, id: @sight, sight: {  }
+    patch :update, id: @sight, sight: {
+      name: 'Seattle Center',
+      type: 'Landmark'
+    }
     assert_redirected_to sight_path(assigns(:sight))
   end
 

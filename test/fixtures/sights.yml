@@ -4,8 +4,34 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+art_institute: {
+  city: chicago,
+  name: 'Art Institute',
+  latitude: 41.8795473,
+  longitude: -87.6237238,
+  address: '111 S Michigan Ave, Chicago, IL 60603'
+}
+
+frankfurt_zoo: {
+  city: frankfurt,
+  name: 'Frankfurt Zoo',
+  latitude: 50.1156,
+  longitude: 8.69863,
+  address: 'Bernhard-Grzimek-Allee 1, 60316 Frankfurt am Main, Germany'
+}
+
+goethe_house: {
+  city: frankfurt,
+  name: 'Goethehaus',
+  latitude: 50.1112207,
+  longitude: 8.6775795,
+  address: 'Goethehaus, Großer Hirschgraben 23, 60311 Frankfurt am Main, Germany'
+}
+
+liebig_museum: {
+  city: giessen,
+  name: 'Liebig Museum',
+  latitude: 51.2003019,
+  longitude: 6.4583765,
+  address: 'Liebigstraße 12, 35390 Gießen, Germany'
+}

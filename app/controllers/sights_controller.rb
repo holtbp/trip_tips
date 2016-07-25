@@ -24,8 +24,9 @@ class SightsController < ApplicationController
     @sight = Sight.new(sight_params)
 
     if @sight.save
-      redirect_to @sight, notice: 'Sight was successfully created.'
+      redirect_to sight_url(@sight), notice: 'Sight was successfully created.'
     else
+      byebug
       render :new
     end
   end
@@ -53,6 +54,6 @@ class SightsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def sight_params
-      params[:sight]
+      params.require(:sight).permit(:name, :type)
     end
 end

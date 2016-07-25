@@ -2,7 +2,7 @@ require 'test_helper'
 
 class GetawaysControllerTest < ActionController::TestCase
   setup do
-    @getaway = getaways(:one)
+    @getaway = getaways(:bill_and_ted)
   end
 
   test "should get index" do
@@ -18,7 +18,7 @@ class GetawaysControllerTest < ActionController::TestCase
 
   test "should create getaway" do
     assert_difference('Getaway.count') do
-      post :create, getaway: {  }
+      post :create, getaway: { name: 'Eurocup 2018' }
     end
 
     assert_redirected_to getaway_path(assigns(:getaway))
@@ -35,7 +35,7 @@ class GetawaysControllerTest < ActionController::TestCase
   end
 
   test "should update getaway" do
-    patch :update, id: @getaway, getaway: {  }
+    patch :update, id: @getaway, getaway: { name: @getaway.name }
     assert_redirected_to getaway_path(assigns(:getaway))
   end
 

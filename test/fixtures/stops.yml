@@ -4,8 +4,18 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+chicago_stop: {
+  getaway: bill_and_ted,
+  city: chicago,
+  arrival: DateTime.now,
+  departure: Datetime.now + 1.day
+}
 # column: value
 #
-two: {}
+frankfurt_stop: {
+  getaway: roadtrip,
+  city: frankfurt,
+  arrival: DateTime.now,
+  departure: Datetime.now + 1.day
+}
 #  column: value

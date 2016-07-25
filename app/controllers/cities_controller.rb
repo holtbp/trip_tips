@@ -26,6 +26,7 @@ class CitiesController < ApplicationController
     if @city.save
       redirect_to @city, notice: 'City was successfully created.'
     else
+      byebug
       render :new
     end
   end
@@ -53,6 +54,6 @@ class CitiesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def city_params
-      params[:city]
+      params.require(:city).permit(:name)
     end
 end

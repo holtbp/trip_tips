@@ -4,23 +4,14 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-chicago: {
-  name: "Chicago",
-  province: illinois,
-  latitude: 41.8781136,
-  longitude: -87.6297982
+illinois: {
+  name: "Illinois",
+  country_code: "US"
 }
-
-frankfurt: {
-  name: "Frankfurt",
-  province: hesse,
-  latitude: 50.1109221,
-  longitude: 8.6821267
+# column: value
+#
+hesse: {
+  name: "Hesse",
+  country_code: "DE"
 }
-
-giessen: {
-  name: "Giessen",
-  province: hesse,
-  latitude: 50.1109221,
-  longitude: 8.6821267
-}
+#  column: value

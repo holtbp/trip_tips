@@ -54,10 +54,7 @@ class StopsController < ApplicationController
 
     # Use callbacks to share common setup or constraints between actions.
     def set_stop
-      @stop = Stop.where(
-        id: params[:id],
-        getaway_id: @getaway.id
-      ).first
+      @stop = Stop.where( id: params[:id], getaway_id: @getaway.id ).first
     end
 
     def set_cities

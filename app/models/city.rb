@@ -12,7 +12,16 @@ class City < ActiveRecord::Base
   has_many :sights
   belongs_to :province
 
+  class << self
+    def name_sorted
+      self.all.sort_by do |city|
+        [city.name, city.province.name, city.province.country.name].join(',')
+      end
+    end
+  end
+
   def display_name
+    return name if province.blank?
     "#{name}, #{province.name}, #{province.country.name}"
   end
 
@@ -21,19 +30,13 @@ class City < ActiveRecord::Base
     province.country
   end
 
-  def self.name_sorted
-    self.all.sort_by do |city|
-      [city.name, city.province.name, city.province.country.name].join(',')
-    end
-  end
-
   def coordinates
     [latitude, longitude]
   end
 
   # TODO: Build the UI to call this method with a value and possibly units.
   # Break this method out into a service at some point.
-  def nearby_sights(kilometer_radius = 30)
+  def nearby_sights(kilometer_radius = 50)
     # Get sights that are nearby, but not necessarily in the city.
     # Ordered by distance, by default
     Sight.near(coordinates, kilometer_radius)

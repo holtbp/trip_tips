@@ -13,8 +13,10 @@ class Getaway < ActiveRecord::Base
   has_many :users
   has_many :stops
 
-  # Total time on getaway; departure - arrival
+  # Total time (in days); departure - arrival
   def duration
+    return "?" if arrival.blank? || departure.blank?
+    (departure - arrival) / 60 / 60 / 24
   end
 
 end

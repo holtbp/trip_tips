@@ -19,8 +19,8 @@
 # add_index "users", ["username"], name: "index_users_on_username", unique: true
 
 class User < ActiveRecord::Base
-  devise  :database_authenticatable, :registerable,
-          :recoverable, :rememberable, :trackable, :validatable
+  # devise  :database_authenticatable, :registerable,
+  #         :recoverable, :rememberable, :trackable, :validatable
 
   has_many :getaways
   has_many :adventures, as: :recommendations
