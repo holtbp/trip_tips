@@ -9,14 +9,32 @@
 # end
 
 class Getaway < ActiveRecord::Base
+  include DateHelper
 
   has_many :users
   has_many :stops
 
-  # Total time (in days); departure - arrival
-  def duration
-    return "?" if arrival.blank? || departure.blank?
-    (departure - arrival) / 60 / 60 / 24
+  # All cities that will be visited
+  # Returns Array of City instances.
+  def visiting_cities
+    return [] if stops.blank?
+
+    cities = []
+    sights = stops.map(&:sights)
+
+    if sights.present?
+      cities = sights.flatten.map(&:city).uniq
+    end
+
+    cities
   end
 
+  # All countries that will be visited
+  # Returns Array of ISO3166::Country instances.
+  def visiting_countries
+    cities = visiting_cities
+    return [] if cities.blank?
+
+    cities.map(&:country).uniq(&:name)
+  end
 end

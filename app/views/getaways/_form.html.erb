@@ -16,6 +16,16 @@
     <%= f.text_field :name %>
   </div>
 
+  <div>
+    <%= f.label :arrival, "Arrive" %>
+    <%= f.datetime_select :arrival, :ampm => true, :minute_step => 15 %>
+  </div>
+
+  <div>
+    <%= f.label :departure , "Depart" %>
+    <%= f.datetime_select :departure, :ampm => true, :minute_step => 15 %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

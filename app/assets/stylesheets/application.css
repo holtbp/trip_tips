@@ -41,3 +41,11 @@ body {
 img.static-map {
   margin: 1em 0;
 }
+
+ul {
+  margin: 0;
+}
+
+li {
+  margin-left: 2em;
+}

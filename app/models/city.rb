@@ -36,7 +36,7 @@ class City < ActiveRecord::Base
 
   # TODO: Build the UI to call this method with a value and possibly units.
   # Break this method out into a service at some point.
-  def nearby_sights(kilometer_radius = 50)
+  def nearby_sights(kilometer_radius = 60)
     # Get sights that are nearby, but not necessarily in the city.
     # Ordered by distance, by default
     Sight.near(coordinates, kilometer_radius)

@@ -28,7 +28,7 @@ class CityTest < ActiveSupport::TestCase
     assert_equal @city.coordinates, [@city.latitude, @city.longitude]
   end
 
-  test "nearby_sights does not include sights further than 50km" do
+  test "nearby_sights does not include sights further than 60km" do
     sights = @city.nearby_sights
     assert sights.exclude?(sights(:liebig_museum))
     assert sights.include?(sights(:frankfurt_zoo))

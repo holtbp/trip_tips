@@ -69,6 +69,6 @@ class GetawaysController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def getaway_params
-      params.require(:getaway).permit(:name)
+      params.require(:getaway).permit(:name, :arrival, :departure)
     end
 end

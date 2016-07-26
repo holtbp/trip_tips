@@ -18,36 +18,12 @@ class StopTest < ActiveSupport::TestCase
     assert_nil Stop.new.country
   end
 
-  test "duration" do
-    assert_equal 24.0, @stop.duration
+  test "sights" do
+    adventure = adventures(:art_adventure)
+    assert_equal [adventure.sight], @stop.sights
   end
 
-  test "duration_string with nil arrival and departure" do
-    assert_equal '?', Stop.new.duration_string
-  end
-
-  test "duration_string with nil arrival" do
-    stop = Stop.new(departure: '2016-07-25 11:00:00')
-    assert_equal "? - Jul 25, 2016", stop.duration_string
-  end
-
-  test "duration_string with nil departure" do
-    stop = Stop.new(arrival: '2016-07-25 11:00:00')
-    assert_equal "Jul 25, 2016 - ?", stop.duration_string
-  end
-
-  test "duration_string with same month" do
-    stop = Stop.new(arrival: '2016-07-25 11:00:00', departure: '2016-07-29 11:00:00')
-    assert_equal "Jul 25-29, 2016", stop.duration_string
-  end
-
-  test "duration_string with different months" do
-    stop = Stop.new(arrival: '2016-07-25 11:00:00', departure: '2016-08-01 11:00:00')
-    assert_equal "Jul 25 - Aug 1, 2016", stop.duration_string
-  end
-
-  test "duration_string with different years" do
-    stop = Stop.new(arrival: '2016-12-25 11:00:00', departure: '2017-01-01 11:00:00')
-    assert_equal "Dec 25, 2016 - Jan 1, 2017", stop.duration_string
+  test "sights without adventures" do
+    assert_equal [], Stop.new.sights
   end
 end
