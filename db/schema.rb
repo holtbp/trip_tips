@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160718194329) do
+ActiveRecord::Schema.define(version: 20160729024754) do
 
   create_table "adventures", force: :cascade do |t|
     t.integer  "sight_id"
@@ -41,8 +41,9 @@ ActiveRecord::Schema.define(version: 20160718194329) do
     t.text     "description"
     t.datetime "arrival"
     t.datetime "departure"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.boolean  "is_public",   default: false
   end
 
   create_table "provinces", force: :cascade do |t|

@@ -26,6 +26,13 @@
     <%= f.datetime_select :departure, :ampm => true, :minute_step => 15 %>
   </div>
 
+  <div>
+    <%= f.label :is_public, "Viewable by everyone:" %>
+    <%= f.check_box :is_public, default: false %>
+  </div>
+
+  <br/>
+
   <div class="actions">
     <%= f.submit %>
   </div>

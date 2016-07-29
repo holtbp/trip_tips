@@ -6,6 +6,7 @@
 #   t.datetime "departure"
 #   t.datetime "created_at",     null: false
 #   t.datetime "updated_at",     null: false
+#   t.boolean  "is_public",   default: false
 # end
 
 class Getaway < ActiveRecord::Base
@@ -13,6 +14,8 @@ class Getaway < ActiveRecord::Base
 
   has_many :users
   has_many :stops
+
+  scope :all_public, -> { where(is_public: true) }
 
   # All cities that will be visited
   # Returns Array of City instances.

@@ -4,7 +4,7 @@ class GetawaysController < ApplicationController
   # GET /getaways
   # GET /getaways.json
   def index
-    @getaways = Getaway.all
+    @getaways = Getaway.all_public
   end
 
   # GET /getaways/1
@@ -69,6 +69,6 @@ class GetawaysController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def getaway_params
-      params.require(:getaway).permit(:name, :arrival, :departure)
+      params.require(:getaway).permit(:name, :arrival, :departure, :is_public)
     end
 end
