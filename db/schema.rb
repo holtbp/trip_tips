@@ -11,15 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160729024754) do
+ActiveRecord::Schema.define(version: 20160729030457) do
 
   create_table "adventures", force: :cascade do |t|
     t.integer  "sight_id"
     t.integer  "stop_id"
     t.text     "description"
     t.integer  "rating"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.boolean  "completed",   default: false
   end
 
   add_index "adventures", ["sight_id"], name: "index_adventures_on_sight_id"

@@ -3,8 +3,9 @@
 #   t.integer  "stop_id"
 #   t.text     "description"
 #   t.integer  "rating"
-#   t.datetime "created_at",  null: false
-#   t.datetime "updated_at",  null: false
+#   t.datetime "created_at",   null: false
+#   t.datetime "updated_at",   null: false
+#   t.boolean  "completed", default: false
 # end
 
 # add_index "adventures", ["stop_id"], name: "index_adventures_on_stop_id"
