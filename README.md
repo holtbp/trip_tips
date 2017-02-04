@@ -8,21 +8,6 @@
 ## TODO
 Turn these items into GitHub Issues:
 
-* Register for account
-  * Confirm email
-  * Forgot password
-* Browsing
-  * Implement toggling of getaways to public/private viewing
-  * Allow users to view public getaways
-  * Allow users to view all sights w/ stats
-    * Number of people that have been to a sight
-    * Number of people who have added sight to a getaway
-* Tips for travel
-  * Show local currency (DONE) - maybe a link to exchange rate?
-  * Show country code (DONE) - example of dialing a local phone number
-  * Show local name for countries (DONE)
-  * Show local name for cities - need to obtain that data somehow
-  * Show list of languages locals speak (showing language codes currently). Use this [gem](https://github.com/grosser/i18n_data) to get languageg names
 * Sight info
   * Do lookups for operating hours for everything except landmarks. [API page](https://developers.google.com/places/web-service/details#PlaceDetailsResults)
 * Stops
@@ -30,3 +15,9 @@ Turn these items into GitHub Issues:
   * Autocomplete cities based on Google's API. Automatically add cities to the DB when a stop is created for a city that doesn't exist. [Relevant SO post](http://stackoverflow.com/questions/13689705/how-to-add-google-maps-autocomplete-search-box)
 * On the Trip
   * Allow checking off things completed/visited
+    * Add column via migration (DONE)
+    * Add UI to mark as completed
+* Require authentication to create Getaway; incorporate user_id into records
+* User profile page
+  * List travel stats
+  * List completed adventures

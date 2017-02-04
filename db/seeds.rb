@@ -63,6 +63,12 @@ cities = [
     country_code: "US"
   },
   {
+    name: "Los Angeles",
+    local_name: "Los Angeles",
+    province: "California",
+    country_code: "US"
+  },
+  {
     name: "Miami",
     local_name: "Miami",
     province: "Florida",

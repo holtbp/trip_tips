@@ -8,7 +8,7 @@
 
 <ul>
   <lh>General Information:</lh>
-  <li>Locals call "<%= @stop.country.name %>": <%= @stop.country.local_name %>
+  <li>Locals call "<%= @stop.country.name %>": <%= @stop.country.local_name %></li>
   <li>Currency: <%= @stop.country.currency.code %></li>
   <li>Languages spoken: <%= @stop.country.languages.join(', ') %></li>
   <li>Country dialing code: +<%= @stop.country.country_code %></li>
@@ -35,3 +35,19 @@
     <% end %>
   </ul>
 <% end %>
+
+<div id='map'></div>
+
+<script type='text/javascript'>
+  var city = '<%= @stop.city.to_json %>';
+  var sights = '<%= @stop.sights.to_json %>';
+
+  // TODO: Fix this horrible hack
+  while (city.includes('&quot;')) { city = city.replace('&quot;', '"'); }
+  while (sights.includes('&quot;')) { sights = sights.replace('&quot;', '"'); }
+
+  city = JSON.parse(city);
+  sights = JSON.parse(sights);
+</script>
+
+<%= javascript_include_tag @google_maps_url %>

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<% @google_maps_url = "https://maps.googleapis.com/maps/api/js?key=#{GOOGLE_MAPS_API_KEY}&callback=initMap" %>
 <html>
 <head>
   <title>TripTips</title>
@@ -16,10 +17,8 @@
   <section class="body-container">
     <%= yield %>
   </section>
-
-  <script src="http://code.jquery.com/jquery.js"></script>
-
-  <!-- <% google_maps_url = "https://maps.googleapis.com/maps/api/js?key=#{GOOGLE_MAPS_API_KEY}&callback=initMap" %> -->
-  <!-- <script src="<%= google_maps_url %>" async defer></script> -->
 </body>
+<footer>
+  <!-- <script src="http://code.jquery.com/jquery.js"></script> -->
+</footer>
 </html>

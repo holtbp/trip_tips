@@ -2,3 +2,22 @@
 
 <%= link_to 'Edit', edit_sight_path(@sight) %> |
 <%= link_to 'Back', sights_path %>
+
+<div id='map'></div>
+
+<script type='text/javascript'>
+  var city = '<%= @sight.city.to_json %>';
+  var sight = '<%= @sight.to_json %>';
+
+  // TODO: Fix this horrible hack
+  while (city.includes('&quot;')) { city = city.replace('&quot;', '"'); }
+  while (sight.includes('&quot;')) { sight = sight.replace('&quot;', '"'); }
+
+  city = JSON.parse(city);
+  sight = JSON.parse(sight);
+
+  console.log(city);
+  console.log(sight);
+</script>
+
+<%= javascript_include_tag @google_maps_url %>

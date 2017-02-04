@@ -23,6 +23,17 @@ class User < ActiveRecord::Base
   #         :recoverable, :rememberable, :trackable, :validatable
 
   has_many :getaways
-  has_many :adventures, as: :recommendations
 
+  def adventures
+    return [] if getaways.blank?
+
+    stops = getaways.map(&:stops).flatten
+    return [] if stops.blank?
+
+    stops.map(&:adventures).flatten
+  end
+
+  def completed_adventures
+    adventures.select { |a| a.completed }
+  end
 end
